@@ -11,4 +11,4 @@ _Project Description :_ ZenCloud Ascent: Transformative Yoga Academy Admissions 
 - Created two folders for frontend/ and backend/
 - Created the folder structure for the frontend
 - Create a component Hello_World.jsx
-- Import the component in App.jsx and use it
+- Import the component in App.jsx and use it.
