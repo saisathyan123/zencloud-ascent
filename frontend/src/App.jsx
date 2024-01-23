@@ -1,10 +1,23 @@
-import Hello_world from "./components/Hello_World" 
-import "./App.css"
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
+import Contact from "./pages/Contact";
+import SignUp from "./pages/Signup";
 function App() {
-
   return (
-  <Hello_world />
-  )
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
