@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { TextField } from "@mui/material";
 import img from "../assets/images/wesley-tingey-rtS8Fpb3rcI-unsplash.jpg";
+import Navbar from "../components/Navbar";
 
 function Register() {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ function Register() {
 
   return (
     <>
+      <Navbar />
       <div className="form-center">
         <div className="form-container">
           <div>
@@ -77,9 +79,11 @@ function Register() {
             </div>
             <div>
               <br />
-              <center>
-                <button class="loginbut">Sign in</button>
-              </center>
+              <Link to="/dashboard">
+                <center>
+                  <button class="loginbut">Sign in</button>
+                </center>
+              </Link>
             </div>
           </form>
         </div>

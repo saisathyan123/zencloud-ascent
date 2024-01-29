@@ -25,3 +25,14 @@ _Project Description :_ ZenCloud Ascent: Transformative Yoga Academy Admissions 
 - Created Dashboard for user
 - Created Profile page in dashboard for user
 - Created routing and created pages for sidenav
+
+# Day 4
+
+- Created Components for user management
+- Created components for CRUD for user
+
+# Day 5
+
+- Design components for Admin Profile
+- Design Components for Password
+- Design components for site settings

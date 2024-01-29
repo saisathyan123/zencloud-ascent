@@ -6,10 +6,10 @@ import Login from "./pages/Login";
 import Contact from "./pages/Contact";
 import SignUp from "./pages/Signup";
 import Dashboard from "./pages/Dashboard";
+import Admin from "./pages/AdminDashboard";
 function App() {
   return (
     <Router>
-      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -17,6 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/admindashboard" element={<Admin />} />
       </Routes>
     </Router>
   );
