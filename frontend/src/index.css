@@ -1,6 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -15,19 +16,45 @@ h1 {
 }
 
 .Home{
-    background:url("C:\Users\saisa\zencloud-ascent\frontend\src\assets\images\conscious-design-nDnLMXYqOVs-unsplash.jpg") center center/cover;
+    background:url("C:\Users\saisa\zencloud-ascent\frontend\src\assets\images\chelsea-gates-n8L1VYaypcw-unsplash.jpg") center center/cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 98vh;
     width: 100vw;
     color: white;
 }
 
 .home-container {
   display: flex;
+  justify-content:right;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.center-text{
+  padding: 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 180px;
+}
+
+.center-text h1{
+  
+  font-size: 80px;
+  font-family: 'Dancing Script', cursive !important;
+}
+
+.center-text p{
+  font-size: 32px;
+  font-family: 'Dancing Script', cursive !important;
+}
+
+
+.home-con{
+  font-size:40px;
+  justify-content: right;
 }
 
 a {
@@ -135,6 +162,18 @@ form {
     margin-top: 40px;
     margin-left: 40px;
   }
+  .carddash4{
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  .carddash5{
+    margin-top: 40px;
+    margin-left: 40px;
+  }
+  .carddash6{
+    margin-top: 40px;
+    margin-left: 40px;
+  }
   .nav1{
     padding: 20px;
   }
@@ -239,3 +278,186 @@ form {
     overflow-y: hidden;
   }
 
+  .img-fluid{
+    padding-left: 40px;
+    padding-top: 30px;
+  }
+
+  .contact_btn{
+    margin-left: 40px;  
+  }
+  .footer-wrapper {
+    margin: 6rem 0rem;
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 0rem;
+  }
+  .footer-logo-container {
+    max-width: 155px;
+  }
+  .footer-icons {
+    margin-top: 2.5rem;
+  }
+  .footer-icons svg {
+    font-size: 1.5rem;
+    margin-right: 1.25rem;
+    color: #585858;
+  }
+  /* .footer-section-one {
+    border: 2px solid blue;
+  } */
+  .footer-section-two {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer-section-columns {
+    display: flex;
+    flex-direction: column;
+    min-width: 190px;
+  }
+  .footer-section-columns span {
+    margin: 0.25rem 0rem;
+    font-weight: 600;
+    color: #4c4c4c;
+    cursor: pointer;
+  }
+--------------------------------------------------------
+/* profileform */
+
+form {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: #3ae840;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+-----------------------------------------------------
+/* profileview */
+.profile-view-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.profile-view-container h2 {
+  text-align: center;
+}
+
+.profile-view-container label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-view-container input,
+.profile-view-container textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.profile-view-container button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-view-container button:hover {
+  background-color: #45a049;
+}
+
+-------------------------------------------------------------------------
+/* AboutUsPage.css */
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-header {
+  color: #1a237e;
+  text-align: center;
+}
+
+.about-text {
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Contact */
+/* ContactUsPage.css */
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contact-header {
+  color: #1a237e;
+  text-align: center;
+}
+
+.contact-text {
+  line-height: 1.6;
+  color: #333;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.contact-details {
+  margin-top: 20px;
+}
+
+.contact-details p {
+  margin-bottom: 10px;
+}
+
+.contact-form {
+  margin-top: 30px;
+}
+
+.contact-form h2 {
+  color: #1a237e;
+}
+
+.cards {
+  display: flex;
+}

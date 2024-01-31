@@ -14,8 +14,15 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems } from "../components/AdminDash/Listitems";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -67,11 +74,42 @@ const Drawer = styled(MuiDrawer, {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Dashboard() {
+export default function UsersAdmin() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+  function createData(name, email, phone, pass) {
+    return { name, email, phone, pass };
+  }
+
+  const rows = [
+    createData(
+      "Sai Sathyan V R",
+      "saisathyan@gmail.com",
+      "9876453623",
+      "xxxxxxxxx"
+    ),
+    createData("Sachin G K", "sachin@gmail.com", "5876453623", "xxxxxxxxx"),
+    createData(
+      "Ramkarthik G",
+      "ramkarthik@gmail.com",
+      "8876453623",
+      "xxxxxxxxx"
+    ),
+    createData(
+      "Sanjivnaath P",
+      "sanjivnaath@gmail.com",
+      "7876453623",
+      "xxxxxxxxx"
+    ),
+    createData(
+      "Vijaya Kumar M P",
+      "vijayakumar@gmail.com",
+      "6876453623",
+      "xxxxxxxxx"
+    ),
+  ];
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -146,16 +184,54 @@ export default function Dashboard() {
           <br />
           <br />
           <br />
-          <h1 style={{ padding: "0 20px" }}>Welcome Admin,</h1>
+          <h1 style={{ padding: "0 20px" }}>Users</h1>
+
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <div>
-              <Link to={"/dashboard/admin/create-academy"}>
-                <Button variant="contained">Create Academy</Button>
-              </Link>
-              &nbsp;&nbsp;&nbsp;
-              <Link to={"/dashboard/admin/add-course"}>
-                <Button variant="contained">Add Course</Button>
-              </Link>
+              <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                  <TableHead>
+                    <TableRow>
+                      <TableCell>Name</TableCell>
+                      <TableCell align="right">Email</TableCell>
+                      <TableCell align="right">Mobile Number</TableCell>
+                      <TableCell align="right">Password</TableCell>
+                      <TableCell align="right">Edit</TableCell>
+                      <TableCell align="right">Delete</TableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {rows.map((row) => (
+                      <TableRow
+                        key={row.name}
+                        sx={{
+                          "&:last-child td, &:last-child th": { border: 0 },
+                        }}
+                      >
+                        <TableCell component="th" scope="row">
+                          {row.name}
+                        </TableCell>
+                        <TableCell align="right">{row.email}</TableCell>
+                        <TableCell align="right">{row.phone}</TableCell>
+                        <TableCell align="right">{row.pass}</TableCell>
+                        <TableCell align="right">
+                          <Link
+                            state={{ user: row }}
+                            to={"/dashboard/admin/users/edit"}
+                          >
+                            <Button variant="contained">Edit</Button>
+                          </Link>
+                        </TableCell>
+                        <TableCell align="right">
+                          <Button color="error" variant="contained">
+                            Delete
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    ))}
+                  </TableBody>
+                </Table>
+              </TableContainer>
             </div>
           </Container>
         </Box>

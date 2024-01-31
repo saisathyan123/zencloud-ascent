@@ -17,28 +17,11 @@ function Register() {
 
   const handleSignUp = (e) => {
     e.preventDefault();
-
-    if (!name.trim()) {
-      alert("Name is required");
-      return;
+    if (email === "admin@zencloud.com") {
+      navigate("/dashboard/admin");
+    } else {
+      navigate("/dashboard");
     }
-
-    if (!email.trim()) {
-      alert("Email is required");
-      return;
-    }
-
-    if (password.length < 6) {
-      setPasswordError("Password must be at least 6 characters long");
-      return;
-    }
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
-
-    navigate("/");
   };
 
   return (
@@ -49,7 +32,12 @@ function Register() {
           <div>
             <img src={img} alt="" />
           </div>
-          <form className="loginp">
+          <form
+            onSubmit={(e) => {
+              handleSignUp(e);
+            }}
+            className="loginp"
+          >
             <center>
               <h1>Login</h1>
             </center>
@@ -59,6 +47,12 @@ function Register() {
                 Email:
                 <br />
                 <TextField
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                  }}
+                  type="email"
+                  required
                   id="outlined-basic"
                   label="Email"
                   variant="outlined"
@@ -71,6 +65,12 @@ function Register() {
                 Password:
                 <br />
                 <TextField
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                  required
+                  type="password"
                   id="outlined-basic"
                   label="Password"
                   variant="outlined"
@@ -79,11 +79,11 @@ function Register() {
             </div>
             <div>
               <br />
-              <Link to="/dashboard">
-                <center>
-                  <button class="loginbut">Sign in</button>
-                </center>
-              </Link>
+              <center>
+                <button type="submit" class="loginbut">
+                  Sign in
+                </button>
+              </center>
             </div>
           </form>
         </div>

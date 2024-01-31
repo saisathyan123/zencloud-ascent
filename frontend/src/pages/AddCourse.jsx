@@ -14,9 +14,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems } from "../components/AdminDash/Listitems";
-import Button from "@mui/material/Button";
 import Container from "@mui/material/Container";
-import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 const drawerWidth = 240;
 
@@ -67,12 +67,14 @@ const Drawer = styled(MuiDrawer, {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function Dashboard() {
+export default function AddCourse() {
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
-
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
   return (
     <ThemeProvider theme={defaultTheme}>
       <Box sx={{ display: "flex" }}>
@@ -144,19 +146,119 @@ export default function Dashboard() {
         >
           <br />
           <br />
-          <br />
-          <br />
-          <h1 style={{ padding: "0 20px" }}>Welcome Admin,</h1>
+
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-            <div>
-              <Link to={"/dashboard/admin/create-academy"}>
-                <Button variant="contained">Create Academy</Button>
-              </Link>
-              &nbsp;&nbsp;&nbsp;
-              <Link to={"/dashboard/admin/add-course"}>
-                <Button variant="contained">Add Course</Button>
-              </Link>
-            </div>
+            <Container component="main" maxWidth="xs">
+              <CssBaseline />
+              <Box
+                sx={{
+                  marginTop: 8,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <Typography component="h1" variant="h5">
+                  Add Course
+                </Typography>
+                <Box
+                  component="form"
+                  onSubmit={handleSubmit}
+                  noValidate
+                  sx={{ mt: 1 }}
+                >
+                  <label>Course Name*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <label>Course Description</label>
+                  <textarea
+                    className="textfield-contact"
+                    required
+                    id="email"
+                    name="email"
+                    autoComplete="email"
+                    autoFocus
+                  />
+                  <label>Academy*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <label>Duration*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <label>Level*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <label>Instructor*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <label>City*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <label>Country*</label>
+                  <TextField
+                    margin="normal"
+                    required
+                    fullWidth
+                    id="name"
+                    name="name"
+                    autoComplete="name"
+                    autoFocus
+                  />
+                  <div>
+                    <Button
+                      type="submit"
+                      fullWidth
+                      variant="contained"
+                      sx={{ mt: 3, mb: 2 }}
+                    >
+                      Add Course
+                    </Button>
+                  </div>
+                </Box>
+              </Box>
+            </Container>{" "}
           </Container>
         </Box>
       </Box>
